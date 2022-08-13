@@ -1,77 +1,72 @@
-@extends('layouts.app')
+@extends('layouts.css')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+@section('reg-user')
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+            <div class="page-ath-header">
+                <a href="/" class="page-ath-logo">
+                    <img src="{{asset('custom-css/images/logo.png')}}"
+                        srcset="{{asset('custom-css/images/logo2x.png 2x')}}" alt="logo"></a>
+                    </div>
+            <div class="page-ath-form">
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                <h2 class="page-ath-heading">Sign up <small>Create New TokenCoin Account</small></h2>
+                <form method="POST" action="{{route('register')}}">
+                    @include('toastr')
+                    @csrf
+
+                    <div class="input-item">
+                        <span class="text-danger"> @error('name') {{$message}} @enderror </span>
+
+                        <input id="name" placeholder="Your Name" class="input-bordered" type="text" name="name" :value="old('name')"  autofocus autocomplete="name" />
+                    </div>
+                    <div class="input-item">
+                        <span class="text-danger"> @error('email') {{$message}} @enderror </span>
+
+                        <input id="email" placeholder="Your Email"  class="input-bordered" type="email" name="email" :value="old('email')" />
+
+                    </div>
+                    <div class="input-item">
+                        <span class="text-danger"> @error('password') {{$message}} @enderror </span>
+
+                        <input id="password" placeholder="password" class="input-bordered" type="password" name="password" autocomplete="new-password" />
+
+                    </div>
+                    <div class="input-item">
+                        <span class="text-danger"> @error('password_confirmation') {{$message}} @enderror </span>
+
+                        <input id="password_confirmation" placeholder="Repeat Password" class="input-bordered" type="password" name="password_confirmation" autocomplete="new-password" />
+
+                    </div>
+                    <div class="input-item text-left">
+                        <input class="input-checkbox input-checkbox-md"
+                            id="term-condition" type="checkbox">
+                            <label for="term-condition">I agree to TokenCoin
+                                <a href="regular-page.html">Privacy Policy</a> &amp; <a href="regular-page.html">
+                                Terms.</a></label>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                            <button class="btn btn-primary btn-block">Create Account</button>
+                </form>
+                <div class="sap-text"><span>Or Sign Up With</span></div>
+                <ul class="row guttar-20px guttar-vr-20px">
+                    <li class="col"><a href="#" class="btn btn-outline btn-dark btn-facebook btn-block"><em
+                                class="fab fa-facebook-f"></em><span>Facebook</span></a></li>
+                    <li class="col"><a href="#" class="btn btn-outline btn-dark btn-google btn-block"><em
+                                class="fab fa-google"></em><span>Google</span></a></li>
+                </ul>
+                <div class="gaps-2x"></div>
+                <div class="gaps-2x"></div>
+                <div class="form-note">Already have an account ? <a href=""> <strong>Sign in
+                            instead</strong></a></div>
             </div>
-        </div>
-    </div>
-</div>
+            <div class="page-ath-footer">
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li>&copy; 2022 TokenCoin.</li>
+                </ul>
+            </div>
+
 @endsection
+

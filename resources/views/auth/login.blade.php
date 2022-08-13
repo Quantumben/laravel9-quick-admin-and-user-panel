@@ -1,73 +1,62 @@
-@extends('layouts.app')
+@extends('layouts.css')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+@section('reg-user')
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+            <div class="page-ath-header">
+                <a href="/" class="page-ath-logo">
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                    <img src="{{asset('custom-css/images/logo.png')}}"
+                        srcset="{{asset('custom-css/images/logo2x.png 2x')}}" alt="logo"></a>
+                    </div>
+            <div class="page-ath-form">
+                <h2 class="page-ath-heading">Sign in <small>with your TokenCoin Account</small></h2>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <form method="POST" action="{{route('login')}}">
+                    @include('toastr')
+                    @csrf
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                    <div class="input-item">
+                        <span class="text-danger"> @error('email') {{$message}} @enderror </span>
+
+                        <input type="email" placeholder="Your Email" class="input-bordered" id="email" name="email" :value="old('email')" autofocus />
+                    </div>
+                    <div class="input-item">
+                        <span class="text-danger"> @error('password') {{$message}} @enderror </span>
+
+                        <input type="password" placeholder="Password" class="input-bordered" id="password" name="password" autocomplete="current-password" />
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="input-item text-left">
+                            <input class="input-checkbox input-checkbox-md"
+                                id="remember-me" type="checkbox">
+                                <label for="remember-me">Remember Me</label>
                             </div>
+                        <div>
+                            <a href="forgot.html">Forgot password?</a>
+                            <div class="gaps-2x"></div>
                         </div>
+                    </div>
+                    <button class="btn btn-primary btn-block">Sign In</button>
+                </form>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+                <div class="sap-text"><span>Or Sign In With</span></div>
+                <ul class="row guttar-20px guttar-vr-20px">
+                    <li class="col"><a href="#" class="btn btn-outline btn-dark btn-facebook btn-block"><em
+                                class="fab fa-facebook-f"></em><span>Facebook</span></a></li>
+                    <li class="col"><a href="#" class="btn btn-outline btn-dark btn-google btn-block"><em
+                                class="fab fa-google"></em><span>Google</span></a></li>
+                </ul>
+                <div class="gaps-2x"></div>
+                <div class="gaps-2x"></div>
+                <div class="form-note">Don’t have an account? <a href="/register"> <strong>Sign up here</strong></a>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+            <div class="page-ath-footer">
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li>&copy; 2022 TokenCoin.</li>
+                </ul>
+            </div>
+
 @endsection

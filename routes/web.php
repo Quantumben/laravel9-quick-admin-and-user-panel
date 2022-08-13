@@ -1,8 +1,8 @@
 <?php
 
+
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-//use App\Http\Controllers\Admin\LoginController;
-//use App\Http\Controllers\Admin\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +44,14 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
         Route::post('/logout', [App\Http\Controllers\Admin\LoginController::class, 'logout'])->name('admin.logout');
     });
 });
+
+//Dashboard
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('dashboard', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('transaction', [App\Http\Controllers\DashboardController::class, 'transaction'])->name('transaction');
+    Route::get('profile', [App\Http\Controllers\DashboardController::class, 'profile'])->name('profile');
+    Route::get('buy', [App\Http\Controllers\DashboardController::class, 'buy'])->name('buy');
+
+    });
