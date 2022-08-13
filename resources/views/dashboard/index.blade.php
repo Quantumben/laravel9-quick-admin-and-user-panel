@@ -36,7 +36,7 @@
                             <div class="token-info"><img class="token-info-icon" src="{{asset('custom-css/images/logo-sm.png')}}"
                                     alt="logo-sm">
                                 <div class="gaps-2x"></div>
-                                <h1 class="token-info-head text-light">1 ETH = 1000 TWZ</h1>
+                                <h1 class="token-info-head text-light">1 ETH = 1000 TKNCN</h1>
                                 <h5 class="token-info-sub">1 ETH = 254.05 USD</h5>
                             </div>
                         </div>
@@ -44,8 +44,8 @@
                             <div class="token-info bdr-tl">
                                 <div>
                                     <ul class="token-info-list">
-                                        <li><span>Token Name:</span>TokenWiz</li>
-                                        <li><span>Ticket Symbol:</span>TWZ</li>
+                                        <li><span>TokenCoin CoinName:</span>TokenCoin</li>
+                                        <li><span>Ticket Symbol:</span>TKNCN</li>
                                     </ul> <a href="#" class="btn btn-primary"><em
                                             class="fas fa-download mr-3"></em>Download Whitepaper</a>
                                 </div>
@@ -251,7 +251,7 @@
                         <table class="table tnx-table">
                             <thead>
                                 <tr>
-                                    <th>TWZ Tokens</th>
+                                    <th>Wallet Transaction</th>
                                     <th>Amount</th>
                                     <th class="d-none d-sm-table-cell tnx-date">Date</th>
                                     <th class="tnx-type">

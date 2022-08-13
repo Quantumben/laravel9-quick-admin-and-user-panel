@@ -10,6 +10,8 @@
                         </a></li><!-- .topbar-nav-item -->
                 </ul><!-- .topbar-nav --><a class="topbar-logo" href="index.html"><img src="{{ asset('custom-css/images/logo-light2x.png')}}"
                         srcset="{{ asset('custom-css/images/logo-light2x.png 2x')}}" alt="logo"></a>
+
+                        {{-- work on this part to show drop down --}}
                 <ul class="topbar-nav">
                     <li class="topbar-nav-item relative"><span
                             class="user-welcome d-none d-lg-inline-block">Welcome! {{Auth::user()->name}}</span><a
@@ -17,7 +19,7 @@
                         <div
                             class="toggle-class dropdown-content dropdown-content-right dropdown-arrow-right user-dropdown">
                             <div class="user-status">
-                                <h6 class="user-status-title">Token balance</h6>
+                                <h6 class="user-status-title">Wallet balance</h6>
                                 <div class="user-status-balance">12,000,000 <small>TWZ</small></div>
                             </div>
                             <ul class="user-links">
@@ -40,7 +42,7 @@
                 <ul class="navbar-menu">
                     <li><a href="/dashboard"><em class="ikon ikon-dashboard"></em> Dashboard</a></li>
                     <li><a href="/buy"><em class="ikon ikon-coins"></em> Fund Wallet</a></li>
-                    <li><a href="ico-distribution.html"><em class="ikon ikon-distribution"></em> Withdraw in USDT </a></li>
+                    <li><a href="/withdraw"><em class="ikon ikon-distribution"></em> Withdraw in USDT </a></li>
                     <li><a href="/transaction"><em class="ikon ikon-transactions"></em> Transactions</a></li>
                     <li><a href="/profile"><em class="ikon ikon-user"></em> Profile</a></li>
 

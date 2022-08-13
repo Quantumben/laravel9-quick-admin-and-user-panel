@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
@@ -24,6 +23,11 @@ class DashboardController extends Controller
     public function buy()
     {
         return view('dashboard.buy');
+    }
+
+    public function withdraw()
+    {
+        return view('dashboard.withdraw');
     }
 }
 

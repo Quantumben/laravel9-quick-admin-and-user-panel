@@ -47,11 +47,11 @@
 
 
 
-                            <div class="card-head"><span class="card-sub-title text-primary font-mid">Step 3</span>
+                            <div class="card-head"><span class="card-sub-title text-primary font-mid">Step 2</span>
                                 <h4 class="card-title">Make a payment</h4>
                             </div>
                             <div class="card-text">
-                                <p>To get tokens please make a payment. You can send payment directly to our address or
+                                <p>To fund your wallet. You can make payment directly to our bank account or
                                     you may pay online. Once you paid, you will receive an email about the successfull
                                     deposit. </p>
                             </div>
@@ -67,9 +67,8 @@
                             <div class="pay-notes">
                                 <div class="note note-plane note-light note-md font-italic"><em
                                         class="fas fa-info-circle"></em>
-                                    <p>Tokens will appear in your account after payment successfully made and approved
-                                        by our team. <br class="d-none d-lg-block"> Please note that, TWZ tokens will
-                                        distributed end of ICO Token Sales. </p>
+                                    <p>Your wallet will be credit automatically after a successfull transaction <br class="d-none d-lg-block"> Please note that, for the bank transfer once approved
+                                        by our team your wallet will be credited.. </p>
                                 </div>
                             </div>
                         </div> <!-- .card-innr -->
@@ -77,7 +76,7 @@
                 </div><!-- .col -->
                 <div class="aside sidebar-right col-lg-4">
                     <div class="d-none d-lg-block"><a href="#" data-toggle="modal" data-target="#add-wallet"
-                            class="btn btn-danger btn-xl btn-between w-100">Add your wallet address before buy <em
+                            class="btn btn-danger btn-xl btn-between w-100">ADD YOUR WALLET ADDRESS<em
                                 class="ti ti-arrow-right"></em></a>
                         <div class="gaps-3x"></div>
                     </div>
@@ -115,9 +114,8 @@
                     aria-label="Close"><em class="ti ti-close"></em></a>
                 <div class="popup-body">
                     <h4 class="popup-title">Wallet Address</h4>
-                    <p>In order to receive your <a href="#"><strong>TokenCoin</strong></a>, please select your
-                        wallet address and you have to put the address below input box. <strong>You will receive TWZ
-                            tokens to this address after the Token Sale end.</strong></p>
+                    <p>In order to withdraw from your <a href="#"><strong>Wallet</strong></a>, please select a
+                        cryto and you have to add the crypto address in the input box. <strong>Upon withdrawal you will recieve your payment in the added address.</strong></p>
                     <form action="#">
                         <div class="row">
                             <div class="col-md-6">
@@ -174,7 +172,7 @@
                             class="ti ti-arrow-right mgl-4-5x"></em></button>
                     <div class="gaps-3x"></div>
                     <div class="note note-plane note-light mgb-1x"><em class="fas fa-info-circle"></em>
-                        <p>Beware: we will never ask you to make payment through the use of any cryptocurrency.</p>
+                        <p>Beware: we will never ask you to make payment through any cryptocurrency address.</p>
                     </div>
                     <div class="note note-plane note-danger"><em class="fas fa-info-circle"></em>
                         <p>In case you are sending with a different name, that doesn't tally with your Tokencoin's Account Username.
@@ -190,16 +188,15 @@
         <div class="modal-dialog modal-dialog-md modal-dialog-centered">
             <div class="modal-content">
                 <div class="popup-body">
-                    <h4 class="popup-title">Confirmation Your Payment</h4>
-                    <p class="lead text-primary">Your Order no. <strong>TNX93KR8N0</strong> has been placed
-                        successfully. </p>
-                    <p>The tokens balance will appear in your account only after you transaction gets 6 confirmations
+                    <h4 class="popup-title">Confirming Your Payment</h4>
+                    <p class="lead text-primary">Please send us a <strong>Screenshot</strong> of your payment. </p>
+                    <p>Wallet balance will be funded only after your transaction is confirmed
                         and approved our team.</p>
-                    <p>To <strong>speed up verifcation</strong> proccesing please enter <strong>your wallet
-                            address</strong> from where you’ll transferring your ethereum to our address.</p>
+                    <p>To <strong>speed up the </strong> proccesing please enter <strong> your Email address
+                        </strong> that contain the payment receipt.</p>
                     <div class="input-item input-with-label"><label for="token-address"
-                            class="input-item-label">Enter your wallet address</label><input class="input-bordered"
-                            type="text" value="0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae"></div>
+                            class="input-item-label">Enter your email address</label><input class="input-bordered"
+                            type="text" value="tokencoin@gmail.com"></div>
                     <!-- .input-item -->
                     <ul class="d-flex flex-wrap align-items-center guttar-30px">
                         <li><a href="#" data-dismiss="modal" data-toggle="modal" data-target="#pay-review"
@@ -210,11 +207,10 @@
                     <div class="gaps-2x"></div>
                     <div class="gaps-1x d-none d-sm-block"></div>
                     <div class="note note-plane note-light mgb-1x"><em class="fas fa-info-circle"></em>
-                        <p>Do not make payment through exchange (Kraken, Bitfinex). You can use MayEtherWallet,
-                            MetaMask, Mist wallets etc.</p>
+                        <p>Beware: we will never ask you to make payment through any cryptocurrency address.</p>
                     </div>
                     <div class="note note-plane note-danger"><em class="fas fa-info-circle"></em>
-                        <p>In case you send a different amount, number of TWZ tokens will update accordingly.</p>
+                        <p>In case your wallet wasn't credited, please <strong> contact our team </strong></p>
                     </div>
                 </div>
             </div><!-- .modal-content -->
@@ -227,24 +223,39 @@
                 <div class="popup-body">
                     <h4 class="popup-title">Fund Wallet</h4>
 
-                    <p>You can choose any of following payment method to make your payment. The tokens balance will
+                    <p>You can choose any of following payment method to make your payment. The balance will
                         appear in your account after successfull payment.</p>
                     <h5 class="mgt-1-5x font-mid">Select payment method:</h5>
                     <ul class="pay-list guttar-20px">
-                        <li class="pay-item"><input type="radio" class="pay-check" name="pay-option"
-                                id="pay-coin"><label class="pay-check-label" for="pay-coin"><img
-                                    src="{{asset('custom-css/images/pay-a.png')}}" alt="pay-logo"></label></li>
-                        <li class="pay-item"><input type="radio" class="pay-check" name="pay-option"
-                                id="pay-coinpay"><label class="pay-check-label" for="pay-coinpay"><img
-                                    src="{{asset('custom-css/images/pay-b.png')}}" alt="pay-logo"></label></li>
-                        <li class="pay-item"><input type="radio" class="pay-check" name="pay-option"
-                                id="pay-paypal"><label class="pay-check-label" for="pay-paypal"><img
-                                    src="{{asset('custom-css/images/pay-c.png')}}" alt="pay-logo"></label></li>
+
+                        {{-- Coingate payment --}}
+                        <li class="pay-item">
+                            <input type="radio"  class="pay-check" name="pay-option"
+                                id="pay-coin" disabled>
+                                <label class="pay-check-label" for="pay-coin"><img
+                                    src="{{asset('custom-css/images/pay-a.png')}}" alt="pay-logo"></label>
+                        </li>
+
+                        {{-- Coin payment --}}
+                        <li class="pay-item">
+                            <input type="radio" class="pay-check" name="pay-option"
+                                id="pay-coinpay">
+                                <label class="pay-check-label" for="pay-coinpay"><img
+                                    src="{{asset('custom-css/images/pay-b.png')}}" alt="pay-logo"></label>
+                        </li>
+
+                        {{-- Paypal Payment --}}
+                        <li class="pay-item">
+                            <input type="radio" class="pay-check" name="pay-option"
+                                id="pay-paypal" disabled>
+                                <label class="pay-check-label" for="pay-paypal"><img
+                                    src="{{asset('custom-css/images/pay-c.png')}}" alt="pay-logo"></label>
+                        </li>
+
                     </ul><span class="text-light font-italic mgb-2x"><small>* Payment gateway company may charge you a
                             processing fees.</small></span>
                     <div class="pdb-2-5x pdt-1-5x"><input type="checkbox" class="input-checkbox input-checkbox-md"
-                            id="agree-term-3"><label for="agree-term-3">I hereby agree to the <strong>token purchase
-                                aggrement &amp; token sale term</strong>.</label></div>
+                            id="agree-term-3"><label for="agree-term-3">I hereby agree to <strong>fund my wallet.</strong>.</label></div>
                     <ul class="d-flex flex-wrap align-items-center guttar-30px">
                         <li><a href="#" data-dismiss="modal" data-toggle="modal" data-target="#pay-review"
                                 class="btn btn-primary">Buy Tokens &amp; Process to Pay <em
@@ -319,6 +330,8 @@
             </div><!-- .modal-content -->
         </div><!-- .modal-dialog -->
     </div><!-- Modal End -->
+
+
 
     <div class="modal fade" id="pay-failed" tabindex="-1">
         <div class="modal-dialog modal-dialog-md modal-dialog-centered">

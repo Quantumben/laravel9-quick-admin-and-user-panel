@@ -53,5 +53,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('transaction', [App\Http\Controllers\DashboardController::class, 'transaction'])->name('transaction');
     Route::get('profile', [App\Http\Controllers\DashboardController::class, 'profile'])->name('profile');
     Route::get('buy', [App\Http\Controllers\DashboardController::class, 'buy'])->name('buy');
+    Route::get('withdraw', [App\Http\Controllers\DashboardController::class, 'withdraw'])->name('withdraw');
 
     });
