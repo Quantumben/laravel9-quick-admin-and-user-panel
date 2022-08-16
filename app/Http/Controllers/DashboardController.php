@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 
 class DashboardController extends Controller
 {
+    public function frontPage()
+    {
+        return view('welcome');
+    }
     public function transaction()
     {
         return view('dashboard.transaction');

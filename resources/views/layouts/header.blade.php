@@ -8,7 +8,7 @@
                                     class="toggle-line"></span><span class="toggle-line"></span><span
                                     class="toggle-line"></span></div>
                         </a></li><!-- .topbar-nav-item -->
-                </ul><!-- .topbar-nav --><a class="topbar-logo" href="index.html"><img src="{{ asset('custom-css/images/logo-light2x.png')}}"
+                </ul><!-- .topbar-nav --><a class="topbar-logo" href="#"><img src="{{ asset('custom-css/images/logo-light2x.png')}}"
                         srcset="{{ asset('custom-css/images/logo-light2x.png 2x')}}" alt="logo"></a>
 
                         {{-- work on this part to show drop down --}}
