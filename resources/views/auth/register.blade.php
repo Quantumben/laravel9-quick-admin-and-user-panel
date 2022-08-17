@@ -57,7 +57,7 @@
                 </ul>
                 <div class="gaps-2x"></div>
                 <div class="gaps-2x"></div>
-                <div class="form-note">Already have an account ? <a href=""> <strong>Sign in
+                <div class="form-note">Already have an account ? <a href="{{route('login')}}"> <strong>Sign in
                             instead</strong></a></div>
             </div>
             <div class="page-ath-footer">

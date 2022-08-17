@@ -45,14 +45,19 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
     });
 });
 
-//Dashboard
+
 
 Route::middleware(['auth'])->group(function () {
 
+    //Dashboard
     Route::get('dashboard', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('transaction', [App\Http\Controllers\DashboardController::class, 'transaction'])->name('transaction');
     Route::get('profile', [App\Http\Controllers\DashboardController::class, 'profile'])->name('profile');
     Route::get('buy', [App\Http\Controllers\DashboardController::class, 'buy'])->name('buy');
     Route::get('withdraw', [App\Http\Controllers\DashboardController::class, 'withdraw'])->name('withdraw');
 
-    });
+    //Paystack
+    Route::post('/pay', [App\Http\Controllers\PaymentController::class, 'redirectToGateway'])->name('pay');
+    Route::get('/payment/callback', [App\Http\Controllers\PaymentController::class, 'handleGatewayCallback']);
+
+});

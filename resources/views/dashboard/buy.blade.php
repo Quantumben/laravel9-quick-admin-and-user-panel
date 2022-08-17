@@ -1,7 +1,5 @@
 @extends('layouts.dashboard')
 @section('user')
-
-
     <div class="page-content">
         <div class="container">
             <div class="row">
@@ -13,41 +11,8 @@
                     </div>
                     <div class="content-area card">
                         <div class="card-innr">
+
                             <div class="card-head"><span class="card-sub-title text-primary font-mid">Step 1</span>
-                                <h4 class="card-title">After a successful Transaction</h4>
-                            </div>
-                            <div class="card-text">
-                                <p>You Can Withdraw Your Funds Using The Following Cryptocurrency.
-                                </p>
-                            </div>
-                            <div class="token-currency-choose">
-                                <div class="row guttar-15px">
-                                    <div class="col-6">
-                                        <div class="pay-option"><input class="pay-option-check" type="radio"
-                                                id="payeth" name="payOption" checked><label
-                                                class="pay-option-label" for="payeth"><span class="pay-title"><em
-                                                        class="pay-icon cf cf-eth"></em><span
-                                                        class="pay-cur">ETH</span></span><span
-                                                    class="pay-amount">0.000800</span></label></div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="pay-option"><input class="pay-option-check" type="radio"
-                                                id="paylte" name="payOption"><label class="pay-option-label"
-                                                for="paylte"><span class="pay-title"><em
-                                                        class="pay-icon cf cf-ltc"></em><span
-                                                        class="pay-cur">LTC</span></span><span
-                                                    class="pay-amount">0.001201</span></label></div>
-                                    </div>
-
-
-                                </div><!-- .row -->
-
-
-                            </div>
-
-
-
-                            <div class="card-head"><span class="card-sub-title text-primary font-mid">Step 2</span>
                                 <h4 class="card-title">Make a payment</h4>
                             </div>
                             <div class="card-text">
@@ -56,18 +21,19 @@
                                     deposit. </p>
                             </div>
                             <div class="pay-buttons">
-                                <div class="pay-button"><a href="#" data-toggle="modal"
-                                        data-target="#get-pay-address" class="btn btn-light-alt btn-between w-100">Get
+                                <div class="pay-button"><a href="#" data-toggle="modal" data-target="#get-pay-address"
+                                        class="btn btn-light-alt btn-between w-100">Get
                                         Address for Payment <em class="ti ti-wallet"></em></a></div>
                                 <div class="pay-button-sap">or</div>
-                                <div class="pay-button"><a href="#" data-toggle="modal"
-                                        data-target="#pay-online" class="btn btn-primary btn-between w-100">Make
+                                <div class="pay-button"><a href="#" data-toggle="modal" data-target="#pay-online"
+                                        class="btn btn-primary btn-between w-100">Make
                                         Online Payment <em class="ti ti-arrow-right"></em></a></div>
                             </div>
                             <div class="pay-notes">
                                 <div class="note note-plane note-light note-md font-italic"><em
                                         class="fas fa-info-circle"></em>
-                                    <p>Your wallet will be credit automatically after a successfull transaction <br class="d-none d-lg-block"> Please note that, for the bank transfer once approved
+                                    <p>Your wallet will be credit automatically after a successfull transaction <br
+                                            class="d-none d-lg-block"> Please note that, for the bank transfer once approved
                                         by our team your wallet will be credited.. </p>
                                 </div>
                             </div>
@@ -110,12 +76,13 @@
 
     <div class="modal fade" id="add-wallet" tabindex="-1">
         <div class="modal-dialog modal-dialog-md modal-dialog-centered">
-            <div class="modal-content"><a href="#" class="modal-close" data-dismiss="modal"
-                    aria-label="Close"><em class="ti ti-close"></em></a>
+            <div class="modal-content"><a href="#" class="modal-close" data-dismiss="modal" aria-label="Close"><em
+                        class="ti ti-close"></em></a>
                 <div class="popup-body">
                     <h4 class="popup-title">Wallet Address</h4>
                     <p>In order to withdraw from your <a href="#"><strong>Wallet</strong></a>, please select a
-                        cryto and you have to add the crypto address in the input box. <strong>Upon withdrawal you will recieve your payment in the added address.</strong></p>
+                        cryto and you have to add the crypto address in the input box. <strong>Upon withdrawal you will
+                            recieve your payment in the added address.</strong></p>
                     <form action="#">
                         <div class="row">
                             <div class="col-md-6">
@@ -126,9 +93,9 @@
                                     </select></div><!-- .input-item -->
                             </div><!-- .col -->
                         </div><!-- .row -->
-                        <div class="input-item input-with-label"><label for="token-address"
-                                class="input-item-label">Your Address for tokens:</label><input class="input-bordered"
-                                type="text" id="token-address" name="token-address"
+                        <div class="input-item input-with-label"><label for="token-address" class="input-item-label">Your
+                                Address for tokens:</label><input class="input-bordered" type="text"
+                                id="token-address" name="token-address"
                                 value="0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae"><span class="input-note">Note:
                                 Address should be ERC20-compliant.</span></div><!-- .input-item -->
                         <div class="note note-plane note-danger"><em class="fas fa-info-circle"></em>
@@ -152,30 +119,32 @@
                     aria-label="Close"><em class="ti ti-close"></em></a>
                 <div class="popup-body">
                     <h4 class="popup-title">Manual Payment</h4>
-                    <p>Please make deposit amount of at least <strong>#1000</strong> to our <strong>Zenith bank account</strong></p>
+                    <p>Please make deposit amount of at least <strong>#1000</strong> to our <strong>Zenith bank
+                            account</strong></p>
 
                     <div class="gaps-1x"></div>
                     <h6 class="font-bold">Account Name: Thrilldigitals Global Technologies</h6>
                     <div class="copy-wrap mgb-0-5x"><span class="copy-feedback"></span><em
-                            class="fab fa-ethereum"></em><input type="text" class="copy-address"
-                            value="1224780068" disabled=""><button
-                            class="copy-trigger copy-clipboard"
-                            data-clipboard-text="1224780068"><em
-                                class="ti ti-files"></em></button></div><!-- .copy-wrap -->
+                            class="fab fa-ethereum"></em><input type="text" class="copy-address" value="1224780068"
+                            disabled=""><button class="copy-trigger copy-clipboard"
+                            data-clipboard-text="1224780068"><em class="ti ti-files"></em></button></div>
+                    <!-- .copy-wrap -->
                     <ul class="pay-info-list row">
                         <li class="col-sm-6"><span>6% </span>VAT will be deducted</li>
                         {{-- <li class="col-sm-6"><span>SET GAS PRICE:</span> 95 Gwei</li> --}}
                     </ul><!-- .pay-info-list -->
                     <div class="pdb-2-5x pdt-1-5x"><input type="checkbox" class="input-checkbox input-checkbox-md"
-                            id="agree-term"><label for="agree-term">I hereby agree<strong> to deposit based on tokencoin terms</strong>.</label></div><button class="btn btn-primary"
-                        data-dismiss="modal" data-toggle="modal" data-target="#pay-confirm">Buy Tokens Now <em
+                            id="agree-term"><label for="agree-term">I hereby agree<strong> to deposit based on tokencoin
+                                terms</strong>.</label></div><button class="btn btn-primary" data-dismiss="modal"
+                        data-toggle="modal" data-target="#pay-confirm">Yes i'm done with the payment <em
                             class="ti ti-arrow-right mgl-4-5x"></em></button>
                     <div class="gaps-3x"></div>
                     <div class="note note-plane note-light mgb-1x"><em class="fas fa-info-circle"></em>
                         <p>Beware: we will never ask you to make payment through any cryptocurrency address.</p>
                     </div>
                     <div class="note note-plane note-danger"><em class="fas fa-info-circle"></em>
-                        <p>In case you are sending with a different name, that doesn't tally with your Tokencoin's Account Username.
+                        <p>In case you are sending with a different name, that doesn't tally with your Tokencoin's Account
+                            Username.
                             send us a mail after a successful transaction
                         </p>
                     </div>
@@ -194,15 +163,21 @@
                         and approved our team.</p>
                     <p>To <strong>speed up the </strong> proccesing please enter <strong> your Email address
                         </strong> that contain the payment receipt.</p>
-                    <div class="input-item input-with-label"><label for="token-address"
-                            class="input-item-label">Enter your email address</label><input class="input-bordered"
-                            type="text" value="tokencoin@gmail.com"></div>
+                    <div class="input-item input-with-label"><label for="token-address" class="input-item-label">Enter
+                            your email address</label><input class="input-bordered" type="text"
+                            value="tokencoin@gmail.com"></div>
                     <!-- .input-item -->
                     <ul class="d-flex flex-wrap align-items-center guttar-30px">
-                        <li><a href="#" data-dismiss="modal" data-toggle="modal" data-target="#pay-review"
-                                class="btn btn-primary">Confirm Payment</a></li>
-                        <li class="pdt-1x pdb-1x"><a href="#" data-dismiss="modal" data-toggle="modal"
-                                data-target="#pay-online" class="link link-primary">Make Online Payment</a></li>
+                        <li>
+                            <a href="" data-dismiss="modal" data-toggle="modal" data-target="#pay-review"
+                                class="btn btn-primary">Confirm Payment</a>
+                        </li>
+
+                        <li class="pdt-1x pdb-1x">
+                            <a href="#" data-dismiss="modal" data-toggle="modal"
+                                data-target="#pay-online" class="link link-primary">Make Online Payment
+                            </a>
+                        </li>
                     </ul>
                     <div class="gaps-2x"></div>
                     <div class="gaps-1x d-none d-sm-block"></div>
@@ -217,61 +192,86 @@
         </div><!-- .modal-dialog -->
     </div><!-- Modal End -->
 
-    <div class="modal fade" id="pay-online" tabindex="-1">
-        <div class="modal-dialog modal-dialog-md modal-dialog-centered">
-            <div class="modal-content pb-0">
-                <div class="popup-body">
-                    <h4 class="popup-title">Fund Wallet</h4>
+    <form action="{{route('pay')}}" method="POST">
+        @csrf
 
-                    <p>You can choose any of following payment method to make your payment. The balance will
-                        appear in your account after successfull payment.</p>
-                    <h5 class="mgt-1-5x font-mid">Select payment method:</h5>
-                    <ul class="pay-list guttar-20px">
+        {{-- <input type="hidden" name="email" value="{{ auth()->user()->email }}"> {{-- required --}}
+        {{-- <input type="hidden" name="orderID" value="{{ auth()->user()->id * mt_rand(1111,9999) }}"> --}} --}}
 
-                        {{-- Coingate payment --}}
-                        <li class="pay-item">
-                            <input type="radio"  class="pay-check" name="pay-option"
-                                id="pay-coin" disabled>
+        {{-- <input type="hidden" name="amount" value="800"> required in kobo
+        Note: i'm sending this from the user input value--}}
+        {{-- <input type="hidden" name="quantity" value="1">
+        <input type="hidden" name="currency" value="NGN"> --}}
+
+        <div class="modal fade" id="pay-online" tabindex="-1">
+            <div class="modal-dialog modal-dialog-md modal-dialog-centered">
+                <div class="modal-content pb-0">
+
+
+
+                    <div class="popup-body">
+                        <h4 class="popup-title">Fund Wallet</h4>
+
+                        <p>You can choose any of following payment method to make your payment. The balance will
+                            appear in your account after successfull payment.</p>
+                        <h5 class="mgt-1-5x font-mid">Select payment method:</h5>
+
+                        <ul class="pay-list guttar-20px">
+
+                            {{-- Coingate payment --}}
+                            <li class="pay-item">
+                                <input type="radio" class="pay-check" name="pay-option" id="pay-coin" disabled>
                                 <label class="pay-check-label" for="pay-coin"><img
-                                    src="{{asset('custom-css/images/pay-a.png')}}" alt="pay-logo"></label>
-                        </li>
+                                        src="{{ asset('custom-css/images/pay-a.png') }}" alt="pay-logo"></label>
+                            </li>
 
-                        {{-- Coin payment --}}
-                        <li class="pay-item">
-                            <input type="radio" class="pay-check" name="pay-option"
-                                id="pay-coinpay">
+                            {{-- Coin payment --}}
+                            <li class="pay-item">
+                                <input type="radio" class="pay-check" name="pay-option" id="pay-coinpay">
                                 <label class="pay-check-label" for="pay-coinpay"><img
-                                    src="{{asset('custom-css/images/pay-b.png')}}" alt="pay-logo"></label>
-                        </li>
+                                        src="{{ asset('custom-css/images/pay-b.png') }}" alt="pay-logo"></label>
+                            </li>
 
-                        {{-- Paypal Payment --}}
-                        <li class="pay-item">
-                            <input type="radio" class="pay-check" name="pay-option"
-                                id="pay-paypal" disabled>
-                                <label class="pay-check-label" for="pay-paypal"><img
-                                    src="{{asset('custom-css/images/pay-c.png')}}" alt="pay-logo"></label>
-                        </li>
+                            {{-- Paypal Payment --}}
+                            <li class="pay-item">
+                                <input type="radio" class="pay-check" name="pay-option" id="pay-paypal" disabled>
+                                <label class="pay-check-label" for="pay-paypal">
+                                    <img
+                                        src="{{ asset('custom-css/images/pay-c.png') }}" alt="pay-logo"></label>
+                            </li>
 
-                    </ul><span class="text-light font-italic mgb-2x"><small>* Payment gateway company may charge you a
-                            processing fees.</small></span>
-                    <div class="pdb-2-5x pdt-1-5x"><input type="checkbox" class="input-checkbox input-checkbox-md"
-                            id="agree-term-3"><label for="agree-term-3">I hereby agree to <strong>fund my wallet.</strong>.</label></div>
-                    <ul class="d-flex flex-wrap align-items-center guttar-30px">
-                        <li><a href="#" data-dismiss="modal" data-toggle="modal" data-target="#pay-review"
-                                class="btn btn-primary">Buy Tokens &amp; Process to Pay <em
-                                    class="ti ti-arrow-right mgl-2x"></em></a></li>
-                        <li class="pdt-1x pdb-1x"><a href="#" data-dismiss="modal" data-toggle="modal"
-                                data-target="#get-pay-address" class="link link-primary">Make Manual Payment</a></li>
-                    </ul>
-                    <div class="gaps-2x"></div>
-                    <div class="gaps-1x d-none d-sm-block"></div>
-                    <div class="note note-plane note-light mgb-1x"><em class="fas fa-info-circle"></em>
-                        <p class="text-light">You will automatically redirect for payment after your order placing.</p>
+                        </ul>
+
+                        <div>
+                            {{-- it allows only number as value --}}
+                            <input type="text" name="amount" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" />
+
+                        </div>
+
+                        <span class="text-light font-italic mgb-2x"><small>* Payment gateway company may charge you a
+                                processing fees.</small></span>
+                        <div class="pdb-2-5x pdt-1-5x"><input type="checkbox" class="input-checkbox input-checkbox-md"
+                                id="agree-term-3"><label for="agree-term-3">I hereby agree to <strong>fund my
+                                    wallet.</strong>.</label></div>
+                        <ul class="d-flex flex-wrap align-items-center guttar-30px">
+                            <li>
+
+                                <input type="submit"  class="btn btn-primary" value="Fund Wallet or Proceed to Pay">
+
+                            </li>
+                            <li class="pdt-1x pdb-1x"><a href="#" data-dismiss="modal" data-toggle="modal"
+                                    data-target="#get-pay-address" class="link link-primary">Make Manual Payment</a></li>
+                        </ul>
+                        <div class="gaps-2x"></div>
+                        <div class="gaps-1x d-none d-sm-block"></div>
+                        <div class="note note-plane note-light mgb-1x"><em class="fas fa-info-circle"></em>
+                            <p class="text-light">You will automatically redirect for payment after your order placing.</p>
+                        </div>
                     </div>
-                </div>
-            </div><!-- .modal-content -->
-        </div><!-- .modal-dialog -->
-    </div><!-- Modal End -->
+                </div><!-- .modal-content -->
+            </div><!-- .modal-dialog -->
+        </div><!-- Modal End -->
+    </form>
 
     <div class="modal fade" id="pay-coingate" tabindex="-1">
         <div class="modal-dialog modal-dialog-md modal-dialog-centered">
@@ -304,7 +304,8 @@
                     <div class="gaps-2x"></div>
                     <h3>Thanks for your contribution!</h3>
                     <p>Your payment amount <strong>1.0 ETH</strong> has been successfully received againest order no.
-                        <strong>TNX94KR8N0</strong>. We’ve added <strong>18,750 TWZ</strong> tokens in account.</p>
+                        <strong>TNX94KR8N0</strong>. We’ve added <strong>18,750 TWZ</strong> tokens in account.
+                    </p>
                     <div class="gaps-2x"></div><a href="ico-distribution.html" class="btn btn-primary">See Token
                         Balance</a>
                     <div class="gaps-1x"></div>
@@ -313,23 +314,6 @@
         </div><!-- .modal-dialog -->
     </div><!-- Modal End -->
 
-    <div class="modal fade" id="pay-review" tabindex="-1">
-        <div class="modal-dialog modal-dialog-md modal-dialog-centered">
-            <div class="modal-content">
-                <div class="popup-body text-center">
-                    <div class="gaps-2x"></div>
-                    <div class="pay-status pay-status-success"><em class="ti ti-check"></em></div>
-                    <div class="gaps-2x"></div>
-                    <h3>We’re reviewing your payment.</h3>
-                    <p>We’ll review your transaction and get back to your within 6 hours. You’ll receive an email with
-                        the details of your contribution.</p>
-                    <div class="gaps-2x"></div><a href="transactions.html" class="btn btn-primary">View
-                        Transaction</a>
-                    <div class="gaps-1x"></div>
-                </div>
-            </div><!-- .modal-content -->
-        </div><!-- .modal-dialog -->
-    </div><!-- Modal End -->
 
 
 
@@ -350,5 +334,4 @@
             </div><!-- .modal-content -->
         </div><!-- .modal-dialog -->
     </div><!-- Modal End -->
-
 @endsection
