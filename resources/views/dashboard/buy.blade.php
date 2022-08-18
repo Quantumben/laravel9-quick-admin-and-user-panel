@@ -192,22 +192,13 @@
         </div><!-- .modal-dialog -->
     </div><!-- Modal End -->
 
-    <form action="{{route('pay')}}" method="POST">
+    <form action="{{route('pay')}}" method="POST" enctype="multipart/form-data" >
         @csrf
 
-        {{-- <input type="hidden" name="email" value="{{ auth()->user()->email }}"> {{-- required --}}
-        {{-- <input type="hidden" name="orderID" value="{{ auth()->user()->id * mt_rand(1111,9999) }}"> --}} --}}
-
-        {{-- <input type="hidden" name="amount" value="800"> required in kobo
-        Note: i'm sending this from the user input value--}}
-        {{-- <input type="hidden" name="quantity" value="1">
-        <input type="hidden" name="currency" value="NGN"> --}}
 
         <div class="modal fade" id="pay-online" tabindex="-1">
             <div class="modal-dialog modal-dialog-md modal-dialog-centered">
                 <div class="modal-content pb-0">
-
-
 
                     <div class="popup-body">
                         <h4 class="popup-title">Fund Wallet</h4>
@@ -244,7 +235,7 @@
 
                         <div>
                             {{-- it allows only number as value --}}
-                            <input type="text" name="amount" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" />
+                            <input type="text" name="amount" class="form-control"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" />
 
                         </div>
 
@@ -255,8 +246,8 @@
                                     wallet.</strong>.</label></div>
                         <ul class="d-flex flex-wrap align-items-center guttar-30px">
                             <li>
-
-                                <input type="submit"  class="btn btn-primary" value="Fund Wallet or Proceed to Pay">
+                                <button type="submit" class="btn btn-primary">Fund Wallet or Proceed to Pay</button>
+                                {{-- <input type="submit"  class="btn btn-primary" value="Fund Wallet or Proceed to Pay"> --}}
 
                             </li>
                             <li class="pdt-1x pdb-1x"><a href="#" data-dismiss="modal" data-toggle="modal"

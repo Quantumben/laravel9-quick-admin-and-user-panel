@@ -3,7 +3,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use Unicodeveloper\Paystack\Paystack;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,9 +55,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('profile', [App\Http\Controllers\DashboardController::class, 'profile'])->name('profile');
     Route::get('buy', [App\Http\Controllers\DashboardController::class, 'buy'])->name('buy');
     Route::get('withdraw', [App\Http\Controllers\DashboardController::class, 'withdraw'])->name('withdraw');
-
+    Route::get('onlinePay', [App\Http\Controllers\PaymentController::class, 'online'])->name('online.pay');
+    Route::get('test', [App\Http\Controllers\PaymentController::class, 'test'])->name('online.test');
     //Paystack
     Route::post('/pay', [App\Http\Controllers\PaymentController::class, 'redirectToGateway'])->name('pay');
     Route::get('/payment/callback', [App\Http\Controllers\PaymentController::class, 'handleGatewayCallback']);
 
 });
+
+

@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
-use Paystack;
+use Unicodeveloper\Paystack\Paystack;
 
 class PaymentController extends Controller
 {
-
+    public function test(){
+        return view('dashboard.test');
+    }
     /**
      * Redirect the User to Paystack Payment Page
      * @return Url
@@ -20,23 +22,15 @@ class PaymentController extends Controller
     {
         try{
 
-            $length = 18;
-            $used_symbols = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
+        $paystack = new Paystack();
 
-
-            $pay = array(
-
-                "email" => auth()->user()->email,
-                "orderID" => auth()->user()->id,
-                "amount" => $request->amount,
-                "quantity" => "1",
-               // "reference" => substr(str_shuffle($used_symbols), 0, $length),
-                "reference" => Paystack::genTranxRef(),
-                "currency" => "NGN",
-
-            );
-            //dd($pay);
-            return Paystack::getAuthorizationUrl($pay)->redirectNow();
+        $request->email = auth()->user()->email;
+        $request->orderID = auth()->user()->id;
+        $request->amount = $request->amount * (100);
+        $request->quantity = '1';
+        $request->reference = $paystack->genTranxRef();
+        $request->key = config('paystack.secretKey');
+        return $paystack->getAuthorizationUrl()->redirectNow();
 
         }catch(\Exception $e) {
             return Redirect::back()->withMessage(['msg'=>'The paystack token has expired. Please refresh the page and try again.', 'type'=>'error']);
@@ -50,7 +44,7 @@ class PaymentController extends Controller
     public function handleGatewayCallback()
     {
         // ['App\Http\Controllers\Paystack::getPaymentData()']
-        $paymentDetails = Paystack::getPaymentData();
+        $paymentDetails = Paystack()->getPaymentData();
 
         dd($paymentDetails);
         // Now you have the payment details,
