@@ -13,18 +13,19 @@ class DashboardController extends Controller
 
     public function transaction()
     {
-        $pay = Payment::all()->toArray();
-        //dd($pay[0]);
-        $amount = $pay[0]['amount'];
-        $ref = $pay[0]['reference'];
-        $status = $pay[0]['status'];
-        $channel = $pay[0]['channel'];
-        $ip = $pay[0]['ip_address'];
-        $date = \Carbon\Carbon::parse($pay[0]['created_at'])->diffForHumans();
+        // $pay = Payment::all()->toArray();
+        // //dd($pay[0]);
+        // $amount = $pay[0]['amount'];
+        // $ref = $pay[0]['reference'];
+        // $status = $pay[0]['status'];
+        // $channel = $pay[0]['channel'];
+        // $ip = $pay[0]['ip_address'];
+        // $date = \Carbon\Carbon::parse($pay[0]['created_at'])->diffForHumans();
 
-        // dd($amount);
+        // // dd($amount);
 
-        return view('dashboard.transaction', compact('amount','ref','status','channel','ip','date'));
+        // return view('dashboard.transaction', compact('amount','ref','status','channel','ip','date'));
+        return view('dashboard.transaction');
     }
 
     public function profile()
@@ -44,10 +45,11 @@ class DashboardController extends Controller
 
     public function dashboard(){
 
-        $balance = Payment::all()->toArray();
-        //dd($pay[0]);
-        $balance = $balance[0]['amount'];
-        return view('dashboard.index', compact('balance'));
+        // $balance = Payment::all()->toArray();
+        // //dd($balance[0]);
+        // $balance = $balance[0]['amount'];
+        // return view('dashboard.index', compact('balance'));
+        return view('dashboard.index');
     }
 
 }

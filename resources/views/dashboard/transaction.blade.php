@@ -40,17 +40,17 @@
                                     <div class="d-flex align-items-center">
                                         <div class="data-state data-state-pending"><span class="d-none">Pending</span></div>
                                         <div class="fake-class"><span class="lead tnx-id">TNX Ref No</span><span
-                                                class="sub sub-date"> {{$ref}}</span></div>
+                                                class="sub sub-date"> {{0}}</span></div>
                                     </div>
                                 </td>
-                                <td class="data-col dt-token"><span class="lead token-amount">{{$amount}}</span><span
+                                <td class="data-col dt-token"><span class="lead token-amount">{{0}}</span><span
                                         class="sub sub-symbol">Naira</span></td>
-                                <td class="data-col dt-amount"><span class="lead amount-pay">{{$status}}</span>
+                                <td class="data-col dt-amount"><span class="lead amount-pay">{{0}}</span>
                                     </td>
-                                <td class="data-col dt-usd-amount"><span class="lead amount-pay">{{$channel}}</span>
+                                <td class="data-col dt-usd-amount"><span class="lead amount-pay">{{0}}</span>
                                   </td>
-                                <td class="data-col dt-account"><span class="lead user-info">{{$ip}}</span><span
-                                        class="sub sub-date">{{$date}}</span></td>
+                                <td class="data-col dt-account"><span class="lead user-info">{{0}}</span><span
+                                        class="sub sub-date">{{0}}</span></td>
                             {{-- @endforeach --}}
                             {{-- @endif --}}
                             </tr>

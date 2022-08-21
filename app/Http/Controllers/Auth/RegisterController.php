@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Payment;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -68,6 +69,31 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+        ]);
+
+        $timestamp = now();
+
+        return Payment::create([
+            // $user = Auth::User()->name;
+
+                'username' => '0',
+                'status' => '0',
+                'reference' => '0',
+                'amount' => '0',
+                'channel' => '0',
+                'currency' =>'0',
+                'ip_address' => '0',
+                'bin' => '0',
+                'last4' => '0',
+                'exp_month' => '0',
+                'exp_year' => '0',
+                'pay_channel' => '0',
+                'card_type' => '0',
+                'brand' => '0',
+                'account_name' => '0',
+                'country_code' => '0',
+                'created_at' => $timestamp,
+                'updated_at' => $timestamp,
         ]);
     }
 }

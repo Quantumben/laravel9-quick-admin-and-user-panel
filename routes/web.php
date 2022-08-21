@@ -58,13 +58,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('onlinePay', [App\Http\Controllers\PaymentController::class, 'online'])->name('online.pay');
     Route::get('test', [App\Http\Controllers\PaymentController::class, 'test'])->name('online.test');
 
-    Route::get('userbalance', [App\Http\Controllers\PaymentController::class, 'UserBalance'])->name('user.balance');
+    Route::get('userbalance', [App\Http\Controllers\PaymentController::class, 'viewBalance'])->name('user.balance');
+    Route::get('usertransaction', [App\Http\Controllers\PaymentController::class, 'viewTransaction'])->name('user.transaction');
 
     //Paystack
     Route::post('pay', [App\Http\Controllers\PaymentController::class, 'redirectToGateway'])->name('pay');
     Route::get('payment/callback', [App\Http\Controllers\PaymentController::class, 'handleGatewayCallback']);
 
-    Route::get('showAllPayment',[App\Http\Controllers\PaymentController::class, 'showPayment']);
+    // Route::get('showAllPayment',[App\Http\Controllers\PaymentController::class, 'showPayment']);
 });
 
 

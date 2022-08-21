@@ -15,22 +15,22 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->string('status');
+            $table->string('username')->default(0);
+            $table->string('status')->default(0);
             $table->string('reference')->nullable();
-            $table->string('amount')->nullable();
-            $table->string('channel')->nullable();
-            $table->string('currency')->nullable();
-            $table->string('ip_address');
-            $table->string('bin')->nullable();
-            $table->string('last4')->nullable();
-            $table->string('exp_month')->nullable();
-            $table->string('exp_year')->nullable();
-            $table->string('pay_channel')->nullable();
-            $table->string('card_type')->nullable();
-            $table->string('brand')->nullable();
-            $table->string('account_name')->nullable();
-            $table->string('country_code')->nullable();
+            $table->string('amount')->default(0)->nullable();
+            $table->string('channel')->default(0)->nullable();
+            $table->string('currency')->default(0)->nullable();
+            $table->string('ip_address')->default(0);
+            $table->string('bin')->default(0)->nullable();
+            $table->string('last4')->default(0)->nullable();
+            $table->string('exp_month')->default(0)->nullable();
+            $table->string('exp_year')->default(0)->nullable();
+            $table->string('pay_channel')->default(0)->nullable();
+            $table->string('card_type')->default(0)->nullable();
+            $table->string('brand')->default(0)->nullable();
+            $table->string('account_name')->default(0)->nullable();
+            $table->string('country_code')->default(0)->nullable();
             $table->timestamps();
         });
     }

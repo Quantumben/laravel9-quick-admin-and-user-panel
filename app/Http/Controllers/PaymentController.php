@@ -111,8 +111,28 @@ class PaymentController extends Controller
 
     }
 
-  
+    public function viewTransaction(){
 
+        $pay = Payment::all()->toArray();
+        //dd($pay[0]);
+        $amount = $pay[0]['amount'];
+        $ref = $pay[0]['reference'];
+        $status = $pay[0]['status'];
+        $channel = $pay[0]['channel'];
+        $ip = $pay[0]['ip_address'];
+        $date = \Carbon\Carbon::parse($pay[0]['created_at'])->diffForHumans();
+
+        // dd($amount);
+
+        return view('dashboard.transaction', compact('amount','ref','status','channel','ip','date'));
+    }
+
+    public function viewBalance(){
+        $balance = Payment::all()->toArray();
+        //dd($pay[0]);
+        $balance = $balance[0]['amount'];
+        return view('dashboard.index', compact('balance'));
+    }
 
 }
 
