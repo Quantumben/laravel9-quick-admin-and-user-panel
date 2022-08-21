@@ -6,14 +6,15 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Payment;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Unicodeveloper\Paystack\Paystack;
 
 class PaymentController extends Controller
 {
-    public function test(){
-        return view('dashboard.test');
-    }
+
     /**
      * Redirect the User to Paystack Payment Page
      * @return Url
@@ -43,13 +44,75 @@ class PaymentController extends Controller
      */
     public function handleGatewayCallback()
     {
-        // ['App\Http\Controllers\Paystack::getPaymentData()']
         $paymentDetails = Paystack()->getPaymentData();
 
-        dd($paymentDetails);
-        // Now you have the payment details,
-        // you can store the authorization_code in your db to allow for recurrent subscriptions
-        // you can then redirect or do whatever you want
+        if($paymentDetails['data']['status'] === 'success'){
+
+                $user = Auth::User()->name;
+                $timestamp = now();
+
+                $paymentlog = [
+
+                    'username' => $user,
+                    'status' => $paymentDetails['data']['status'],
+                    'reference' => $paymentDetails['data']['reference'],
+                    'amount' => $paymentDetails['data']['amount']/100,
+                    'channel' => $paymentDetails['data']['channel'],
+                    'currency' => $paymentDetails['data']['currency'],
+                    'ip_address' => $paymentDetails['data']['ip_address'],
+                    'bin' => $paymentDetails['data']['authorization']['bin'],
+                    'last4' => $paymentDetails['data']['authorization']['last4'],
+                    'exp_month' => $paymentDetails['data']['authorization']['exp_month'],
+                    'exp_year' => $paymentDetails['data']['authorization']['exp_year'],
+                    'pay_channel' => $paymentDetails['data']['authorization']['channel'],
+                    'card_type' => $paymentDetails['data']['authorization']['card_type'],
+                    'brand' => $paymentDetails['data']['authorization']['bank'],
+                    'account_name' => $paymentDetails['data']['authorization']['account_name'],
+                    'country_code' => $paymentDetails['data']['authorization']['country_code'],
+                    'created_at' => $timestamp,
+                    'updated_at' => $timestamp,
+                ];
+
+                DB::table('payments')->insert($paymentlog);
+
+                return redirect()->route('transaction')->with('success', 'Your Account Has Been Credited');
+
+        }else{
+
+                $user = Auth::User()->name;
+                $timestamp = now();
+
+                $paymentlog = [
+
+                    'username' => $user,
+                    'status' => $paymentDetails['data']['status'],
+                    'reference' => $paymentDetails['data']['reference'],
+                    'amount' => $paymentDetails['data']['amount']/100,
+                    'channel' => $paymentDetails['data']['channel'],
+                    'currency' => $paymentDetails['data']['currency'],
+                    'ip_address' => $paymentDetails['data']['ip_address'],
+                    'bin' => $paymentDetails['data']['authorization']['bin'],
+                    'last4' => $paymentDetails['data']['authorization']['last4'],
+                    'exp_month' => $paymentDetails['data']['authorization']['exp_month'],
+                    'exp_year' => $paymentDetails['data']['authorization']['exp_year'],
+                    'pay_channel' => $paymentDetails['data']['authorization']['channel'],
+                    'card_type' => $paymentDetails['data']['authorization']['card_type'],
+                    'brand' => $paymentDetails['data']['authorization']['bank'],
+                    'account_name' => $paymentDetails['data']['authorization']['account_name'],
+                    'country_code' => $paymentDetails['data']['authorization']['country_code'],
+                    'created_at' => $timestamp,
+                    'updated_at' => $timestamp,
+                ];
+
+                DB::table('payments')->insert($paymentlog);
+
+                return redirect()->route('transaction')->with('error','Payment unsuccessful');
+        }
+
     }
+
+  
+
+
 }
 

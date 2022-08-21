@@ -10,9 +10,14 @@
     <!-- Site Title  -->
     <title>TokenCoin - User Dashboard</title>
     <!-- Vendor Bundle CSS -->
-    <link rel="stylesheet" href="{{asset('custom-css/assets/css/vendor.bundle49f7.css?ver=104')}}">
+    <link rel="stylesheet" href="{{asset('custom-css/assets/css/vendor.bundle49f7.css')}}">
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="{{asset('custom-css/assets/css/style.css')}}" id="layoutstyle">
+   <link rel="stylesheet" href="{{asset('custom-css/assets/css/style.css')}}" id="layoutstyle">
+    <!-- Toastr styles for this template -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 </head>
 
 <body class="page-user">
@@ -22,8 +27,14 @@
 
 @include('layouts.footer')
 
+
+{{-- <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> --}}
+
     <!-- JavaScript (include all script here) -->
     <script src="{{asset('custom-css/assets/js/jquery.bundle49f7.js')}}"></script>
     <script src="{{asset('custom-css/assets/js/script49f7.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
 </body>
 </html>
