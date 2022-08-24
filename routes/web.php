@@ -68,4 +68,4 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('showAllPayment',[App\Http\Controllers\PaymentController::class, 'showPayment']);
 });
 
-
+Route::get('test',[App\Http\Controllers\WithdrawController::class, 'test']);

@@ -14,18 +14,15 @@
                     <div class="content-area card">
                         <div class="card-innr">
                             <div class="card-head"><span class="card-sub-title text-primary font-mid">Withdraw Crypto</span>
-                                <h4 class="card-title">Amount of withdraw</h4>
+                                <h4 class="card-title">Withdraw from Balance</h4>
                             </div>
-                            {{-- <div class="card-text">
-                                <p>Enter your amount, you would like to contribute and calculate the amount of token you
-                                    will received. The calculator helps to convert required currency to tokens.</p>
-                            </div> --}}
+
                             <div class="token-contribute">
                                 <div class="token-calc">
                                     <div class="token-pay-amount"><input id="token-base-amount"
                                             class="input-bordered input-with-hint" type="text" value="1">
                                         <div class="token-pay-currency"><a href="#"
-                                                class="link ucap link-light toggle-tigger toggle-caret">ETH</a>
+                                                class="link ucap link-light toggle-tigger toggle-caret">USDT</a>
                                             <div class="toggle-class dropdown-content">
                                                 <ul class="dropdown-list">
                                                     <li><a href="#">BTC</a></li>
@@ -38,8 +35,10 @@
                                     <div class="token-received">
                                         <div class="token-eq-sign">=</div>
                                         <div class="token-received-amount">
-                                            <h5 class="token-amount">123,500.84</h5>
-                                            <div class="token-symbol">USDT</div>
+                                            {{-- <h5 class="token-amount">123,500.84</h5> --}}
+                                            <div class="token-symbol">
+                                                <input type="submit" value="withdraw">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
