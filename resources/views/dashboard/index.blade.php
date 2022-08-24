@@ -11,7 +11,7 @@
                         <div class="token-balance token-balance-with-icon">
                             <div class="token-balance-icon"><img src="{{ asset('custom-css/images/logo-light-sm.png')}}" alt="logo"></div>
                             <div class="token-balance-text">
-                                <h6 class="card-sub-title">Balance</h6><span class="lead">{{0}}
+                                <h6 class="card-sub-title">Balance</h6><span class="lead">{{$balance}}
                                     <span>Naira</span></span>
                             </div>
                         </div>

@@ -25,7 +25,7 @@
                                 </th>
                                 <th class="data-col dt-account sorting_disabled" rowspan="1" colspan="1">IP Address
                                 </th>
-                                <th class="data-col sorting_disabled" rowspan="1" colspan="1"></th>
+                                <th class="data-col sorting_disabled" rowspan="1" colspan="1">Time of Deposit</th>
                             </tr>
                         </thead>
 
@@ -33,57 +33,29 @@
 
                             <tr class="data-item odd" role="row">
 
-                                {{-- @if (is_array($pay[0]) || is_object($pay[0])) --}}
-
-                            {{-- @foreach ($pay[0] as $pays) --}}
                                 <td class="data-col dt-tnxno">
                                     <div class="d-flex align-items-center">
                                         <div class="data-state data-state-pending"><span class="d-none">Pending</span></div>
                                         <div class="fake-class"><span class="lead tnx-id">TNX Ref No</span><span
-                                                class="sub sub-date"> {{0}}</span></div>
+                                                class="sub sub-date"> {{$ref}}</span></div>
                                     </div>
                                 </td>
-                                <td class="data-col dt-token"><span class="lead token-amount">{{0}}</span><span
+                                <td class="data-col dt-token"><span class="lead token-amount">{{$amount}}</span><span
                                         class="sub sub-symbol">Naira</span></td>
-                                <td class="data-col dt-amount"><span class="lead amount-pay">{{0}}</span>
+                                <td class="data-col dt-amount"><span class="lead amount-pay">{{$status}}</span>
                                     </td>
-                                <td class="data-col dt-usd-amount"><span class="lead amount-pay">{{0}}</span>
+                                <td class="data-col dt-usd-amount"><span class="lead amount-pay">{{$channel}}</span>
                                   </td>
-                                <td class="data-col dt-account"><span class="lead user-info">{{0}}</span><span
-                                        class="sub sub-date">{{0}}</span></td>
-                            {{-- @endforeach --}}
-                            {{-- @endif --}}
+                                <td class="data-col dt-account"><span class="lead user-info">{{$ip}}</span>
+                                </td>
+                                <td class="data-col dt-usd-amount"><span class="lead amount-pay">{{$date}}</span>
+                                        </td>
                             </tr>
 
                         </tbody>
 
                     </table>
                 </div>
-
-                {{-- <div class="row align-items-center">
-                <div class="col-md-9">
-                    <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-                        <ul class="pagination">
-                            <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous">
-                                <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0"
-                                    class="page-link">Prev</a></li>
-                            <li class="paginate_button page-item active"><a href="#"
-                                    aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0"
-                                    class="page-link">1</a></li>
-                            <li class="paginate_button page-item "><a href="#"
-                                    aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0"
-                                    class="page-link">2</a></li>
-                            <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#"
-                                    aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0"
-                                    class="page-link">Next</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 text-left text-md-right">
-                    <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">1 -5
-                        of 8</div>
-                </div>
-            </div> --}}
             </div>
         </div><!-- .card-innr -->
     </div>

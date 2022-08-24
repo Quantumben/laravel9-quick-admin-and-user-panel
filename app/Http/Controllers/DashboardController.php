@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Payment;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -13,19 +14,25 @@ class DashboardController extends Controller
 
     public function transaction()
     {
-        // $pay = Payment::all()->toArray();
-        // //dd($pay[0]);
-        // $amount = $pay[0]['amount'];
-        // $ref = $pay[0]['reference'];
-        // $status = $pay[0]['status'];
-        // $channel = $pay[0]['channel'];
-        // $ip = $pay[0]['ip_address'];
-        // $date = \Carbon\Carbon::parse($pay[0]['created_at'])->diffForHumans();
+        $pay = Payment::all()->where('username', '==', Auth::user()->name)->toArray();
 
-        // // dd($amount);
+        if(empty($pay)){
+            $amount = 0;
+            $ref = 0;
+            $status = 0;
+            $channel = 0;
+            $ip = 0;
+            $date = 0;
+        }else{
+            $amount = $pay[0]['amount'];
+            $ref = $pay[0]['reference'];
+            $status = $pay[0]['status'];
+            $channel = $pay[0]['channel'];
+            $ip = $pay[0]['ip_address'];
+            $date = \Carbon\Carbon::parse($pay[0]['created_at'])->diffForHumans();
+        }
 
-        // return view('dashboard.transaction', compact('amount','ref','status','channel','ip','date'));
-        return view('dashboard.transaction');
+        return view('dashboard.transaction', compact('amount','ref','status','channel','ip','date'));
     }
 
     public function profile()
@@ -45,11 +52,17 @@ class DashboardController extends Controller
 
     public function dashboard(){
 
-        // $balance = Payment::all()->toArray();
-        // //dd($balance[0]);
-        // $balance = $balance[0]['amount'];
-        // return view('dashboard.index', compact('balance'));
-        return view('dashboard.index');
+        $balance = Payment::all()->where('username', '==', Auth::user()->name)->toArray();
+        //dd($balance);
+        if(empty($balance)){
+            $balance = 0;
+        }else{
+            $balance = $balance[0]['amount'];
+        }
+        //$balance = $balance[0]['amount'];
+        return view('dashboard.index', compact('balance'));
+
+        //return view('dashboard.index');
     }
 
 }
